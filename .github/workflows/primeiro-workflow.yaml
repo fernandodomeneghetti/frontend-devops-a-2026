@@ -1,0 +1,18 @@
+name: primeiro-workflow # nome tecnico
+run-name: Primeiro Workflow # nome leitura mais simples
+
+# on:
+#     - push
+on: [push]
+
+jobs:
+    mac:
+        runs-on: macos-latest
+        steps:
+            - name: hello mac
+              run: echo "Deu bom!"
+    linux:
+        runs-on: ubuntu-latest
+        steps:
+            - name: hello ubuntu
+              run: echo "Deu bom tbm!"
