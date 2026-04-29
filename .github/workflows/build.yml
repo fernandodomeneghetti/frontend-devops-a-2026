@@ -18,7 +18,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
          with:
-            args: >
+           args: >
               -Dsonar.projectKey=frontend-devops
               -Dsonar.projectName=frontend-devops
               -Dsonar.projectVersion=1.0.0
