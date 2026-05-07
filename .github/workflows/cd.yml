@@ -28,7 +28,7 @@ jobs:
                 context: .
                 file: ./Dockerfile
                 push: true
-                tag: domeneghetti/site-faculdade:latest
+                tags: domeneghetti/site-faculdade:latest
 
             - name: Azure App
               uses: Azure/webapps-deploy@v3.0.1
