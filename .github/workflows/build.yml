@@ -1,0 +1,21 @@
+name: integration
+run-name: Workflow de integração CI
+on: [push]
+jobs:
+    integration:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+
+            - uses: SonarSource/sonarqube-scan-action@v5
+              env:
+                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
+                SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+              with:
+                args: >
+                    -Dsonar.projectKey=frontend-devops
+                    -Dsonar.projectName=frontend-devops
+                    -Dsonar.projectVersion=1.0.0
+                    -Dsonar.sources=.
